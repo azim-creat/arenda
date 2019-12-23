@@ -37,8 +37,9 @@ function htmlmini() {
 }
 // Источник все scss файлов для склеивание в all scss
 let scssFiles = [
+  './app/scss/variables.scss',
   './app/scss/style.scss',
-  './app/scss/first-sreen.scss',
+  './app/scss/first-screen.scss',
   './app/scss/apartments.scss',
   './app/scss/costs.scss',
   './app/scss/blog.scss',

@@ -1,0 +1,17 @@
+.news-item{
+    background-color: $gray;
+    
+    &--img{
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &--content{
+        padding: 3vw;
+    }
+    &--text{
+        text-align: justify;
+    }
+    
+}

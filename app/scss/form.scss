@@ -1,0 +1,229 @@
+*,::before, ::after{
+    box-sizing: border-box;
+}
+form {
+padding: 50px 0;
+width: 80vw;
+  max-width: 400px;
+  margin: 0px auto;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  hr.sep {
+    background: $gold;
+    box-shadow: none;
+    border: none;
+    height: 2px;
+    width: 25%;
+    margin: 0px auto 45px auto;
+  }
+//   .emoji {
+//     font-size: 1.2em;
+//   }
+}
+
+.group {
+  position: relative;
+  margin: 20px 0;
+}
+.group_radio_lable{
+  margin-bottom: 15px ;
+  margin-top: 30px ;
+} 
+
+
+// INPUTS // ============================== //
+
+
+input[type="tel"], input[type="text"]
+ {
+  background: none;
+  color: #fff ;
+  font-size: 18px;
+  color: #fff ;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid $gray;
+  &:focus {
+    outline: none;
+  }
+  &:focus ~ label,
+  &:valid ~ label {
+    top: -14px;
+    font-size: 12px;
+    color: $gold;
+  }
+  
+  &:focus ~ .bar:before {
+    width: 100%;
+  }
+}
+
+.group label {
+  color: $gray;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+  &:before {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: $gold;
+    transition: 300ms ease all;
+    left: 0%;
+  }
+}
+
+
+
+
+// Removing arrow of type Number input ///Start///
+
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="tel"] {
+  -moz-appearance: textfield;
+}
+input[type="tel"]:hover,
+input[type="tel"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type=tel]::-webkit-inner-spin-button,
+input[type=tel]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+// Removing arrow of type Number input ///End///
+
+// BUTTONS // ============================== //
+.btn {
+  width: 100%;
+  padding: 10px 20px;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+  }
+
+  &.btn-link {
+    background: $gold;
+    color: mix(white, $gold, 80%);
+    &:hover {
+      background: $gold;
+    }
+  }
+  &.btn-submit {
+    background: $gold;
+    
+    &:hover {
+      background: darken($gold, 5%);
+      color: black;
+    }
+  }
+  &.btn-cancel {
+    background: #eee;
+    &:hover {
+      background: darken(#eee, 5%);
+      color: mix(black, $gray, 30%);
+    }
+  }
+} 
+
+.btn-box {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Hover */
+.form_radio_btn label:hover {
+  border: 1px solid #fff;
+	color: #fff;
+}
+ 
+
+
+
+
+
+
+.contacts{
+    h3{
+        font-size: 200%;
+    }
+    p{
+        font-size: 150%;
+        padding-top: 10px;
+    }
+    text-align: center;
+}
+
+
+
+
+
+
+.btn{
+  border-radius: 2px;
+  display: inline-block;
+  box-shadow: 0 5px 15px -5px #00000070;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.btn::before{
+  content: "";
+  position: absolute;
+  width: 220%;
+  height: 20%;
+  background: lighten($color: $gold, $amount: 2);
+  // background: yellow;
+  transform: rotate(8deg);
+  left: -110%;
+  top: 90%;
+}
+.btn:hover::before{
+  animation: aaa 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+@keyframes aaa {
+  0%{
+    left: -110%;
+    top: 90%;
+  }50%{
+    left: 10%;
+    top: -30%;
+  }100%{
+    top: -10%;
+    left: -10%;
+  }
+}

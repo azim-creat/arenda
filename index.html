@@ -1,12 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Arenda</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Yeseva+One&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <link rel="stylesheet" href="dist/styles/all.css">
+    <script src="swiper.min.js"></script>
+
 </head>
+
 <body>
-    
+
+    <nav>
+        <ul>
+            <li class="nav-home-page">
+                <a href="#">
+                    <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="11.7647" height="11.7647" fill="white" />
+                        <rect x="19.1177" width="11.7647" height="11.7647" fill="white" />
+                        <rect x="19.1177" y="19.1176" width="11.7647" height="11.7647" fill="white" />
+                        <rect y="19.1176" width="11.7647" height="11.7647" fill="white" />
+                        <rect y="38.2353" width="11.7647" height="11.7647" fill="white" />
+                        <rect x="19.1177" y="38.2353" width="11.7647" height="11.7647" fill="white" />
+                        <rect x="38.2354" width="11.7647" height="11.7647" fill="white" />
+                        <rect x="38.2354" y="19.1176" width="11.7647" height="11.7647" fill="white" />
+                        <rect x="38.2354" y="38.2353" width="11.7647" height="11.7647" fill="white" />
+                    </svg>
+
+                </a>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="outline" viewbox="0 0 512 512" width="512" height="512">
+                        <path
+                            d="M128,120h32a7.99977,7.99977,0,0,0,8-8V64a7.99977,7.99977,0,0,0-8-8H128a7.99977,7.99977,0,0,0-8,8v48A7.99977,7.99977,0,0,0,128,120Zm8-48h16v32H136Z" />
+                        <path
+                            d="M128,208h32a7.99977,7.99977,0,0,0,8-8V152a7.99977,7.99977,0,0,0-8-8H128a7.99977,7.99977,0,0,0-8,8v48A7.99977,7.99977,0,0,0,128,208Zm8-48h16v32H136Z" />
+                        <path
+                            d="M168,240a7.99977,7.99977,0,0,0-8-8H128a7.99977,7.99977,0,0,0-8,8v48a7.99977,7.99977,0,0,0,8,8h32a7.99977,7.99977,0,0,0,8-8Zm-16,40H136V248h16Z" />
+                        <path
+                            d="M384,56H352a7.99977,7.99977,0,0,0-8,8v48a7.99977,7.99977,0,0,0,8,8h32a7.99977,7.99977,0,0,0,8-8V64A7.99977,7.99977,0,0,0,384,56Zm-8,48H360V72h16Z" />
+                        <path
+                            d="M384,144H352a7.99977,7.99977,0,0,0-8,8v48a7.99977,7.99977,0,0,0,8,8h32a7.99977,7.99977,0,0,0,8-8V152A7.99977,7.99977,0,0,0,384,144Zm-8,48H360V160h16Z" />
+                        <path
+                            d="M384,232H352a7.99977,7.99977,0,0,0-8,8v48a7.99977,7.99977,0,0,0,8,8h32a7.99977,7.99977,0,0,0,8-8V240A7.99977,7.99977,0,0,0,384,232Zm-8,48H360V248h16Z" />
+                        <path
+                            d="M488,416H440V400h40a7.99977,7.99977,0,0,0,8-8V280a7.99977,7.99977,0,0,0-8-8H440V24a7.99977,7.99977,0,0,0-8-8H80a7.99977,7.99977,0,0,0-8,8V272H32a7.99977,7.99977,0,0,0-8,8V392a7.99977,7.99977,0,0,0,8,8H72v16H24a7.99977,7.99977,0,0,0-8,8v64a7.99977,7.99977,0,0,0,8,8H488a7.99977,7.99977,0,0,0,8-8V424A7.99977,7.99977,0,0,0,488,416ZM444,288h28v96H443.31348l10.34326-10.34326A7.99877,7.99877,0,0,0,456,368V336H440v28.68652l-8,8-8-8V344H408v24a7.99877,7.99877,0,0,0,2.34326,5.65674L420.68652,384H392V320h24a7.99927,7.99927,0,0,0,6.3999-3.2002Zm-68,80H360V336h16Zm48.00012-80L412,304H384a7.99977,7.99977,0,0,0-8,8v8H352a7.99977,7.99977,0,0,0-8,8v48a7.99977,7.99977,0,0,0,8,8h24v8a7.99977,7.99977,0,0,0,8,8h40v16H352V400a7.99977,7.99977,0,0,0-8-8H312V32H424V288ZM296,416H280V352a7.99977,7.99977,0,0,0-8-8H240a7.99977,7.99977,0,0,0-8,8v64H216V328h80Zm0-104H216V296h80Zm0-32H280V256H264v24H248V256H232v24H216V232h80Zm0-64H216V200h80Zm0-32H280V160H264v24H248V160H232v24H216V136h80Zm0-64H216V104h80Zm0-32H280V64H264V88H248V64H232V88H216V32h80ZM216,432h80v16H216Zm48-16H248V360h16ZM40,288H68l21.6001,28.7998A7.99927,7.99927,0,0,0,96,320h24v64H91.31348l10.34326-10.34326A7.99877,7.99877,0,0,0,104,368V344H88v20.68652l-8,8-8-8V336H56v32a7.99877,7.99877,0,0,0,2.34326,5.65674L68.68652,384H40Zm96,48h16v32H136ZM88,400h40a7.99977,7.99977,0,0,0,8-8v-8h24a7.99977,7.99977,0,0,0,8-8V328a7.99977,7.99977,0,0,0-8-8H136v-8a7.99977,7.99977,0,0,0-8-8H100L87.99988,288H88V32H200V392H168a7.99977,7.99977,0,0,0-8,8v16H88ZM32,432H160v48H32Zm168,48H176V408h24Zm16,0V464h80v16Zm96-72h24v72H312Zm168,72H352V432H480Z" />
+                    </svg>
+
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg width="42" height="92" viewbox="0 0 42 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40.992 38.536H24.696V76H16.632V38.536H0.336V31.48H40.992V38.536Z" fill="white" />
+                        <rect y="20" width="41" height="7" fill="white" />
+                    </svg>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg version="1.1" id="blog" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 212.975 212.975"
+                        style="enable-background:new 0 0 212.975 212.975;" xml:space="preserve">
+                        <g>
+                            <rect x="38.617" y="32.966" width="56.742" height="12" />
+                            <path d="M171.847,46.469c1.971,0,3.9-0.8,5.301-2.199c1.399-1.4,2.199-3.33,2.199-5.301c0-1.979-0.8-3.91-2.199-5.31
+		c-1.4-1.39-3.33-2.19-5.301-2.19c-1.98,0-3.909,0.801-5.31,2.19c-1.39,1.399-2.19,3.33-2.19,5.31c0,1.971,0.801,3.9,2.19,5.301
+		C167.938,45.669,169.867,46.469,171.847,46.469z" />
+                            <path d="M144.847,46.469c1.971,0,3.9-0.8,5.301-2.199c1.399-1.4,2.199-3.33,2.199-5.301c0-1.979-0.8-3.91-2.199-5.31
+		c-1.4-1.39-3.33-2.19-5.301-2.19c-1.979,0-3.909,0.801-5.31,2.19c-1.39,1.399-2.19,3.33-2.19,5.31c0,1.971,0.801,3.9,2.19,5.301
+		C140.938,45.669,142.867,46.469,144.847,46.469z" />
+                            <path d="M117.837,46.469c1.98,0,3.91-0.8,5.311-2.199c1.399-1.4,2.199-3.33,2.199-5.301c0-1.97-0.8-3.91-2.199-5.31
+		c-1.4-1.39-3.33-2.19-5.311-2.19c-1.97,0-3.899,0.801-5.3,2.19c-1.39,1.399-2.19,3.33-2.19,5.31c0,1.971,0.801,3.9,2.19,5.301
+		C113.938,45.669,115.867,46.469,117.837,46.469z" />
+                            <path d="M0,8.181V166.55h49.482v38.243l71.763-38.243h91.73V8.181H0z M197.975,23.181v31.57H15v-31.57H197.975z M117.497,151.55
+		l-53.015,28.253V151.55H15V69.751h182.975v81.799H117.497z" />
+                            <rect x="42.65" y="90.394" width="127.674" height="12" />
+                            <rect x="42.65" y="116.906" width="127.674" height="12" />
+                        </g>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg version="1.1" id="form" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <g>
+                                    <path d="M248.158,343.22c-14.639,0-26.491,12.2-26.491,26.84c0,14.291,11.503,26.84,26.491,26.84
+				c14.988,0,26.84-12.548,26.84-26.84C274.998,355.42,262.799,343.22,248.158,343.22z" />
+                                    <path d="M252.69,140.002c-47.057,0-68.668,27.885-68.668,46.708c0,13.595,11.502,19.869,20.914,19.869
+				c18.822,0,11.154-26.84,46.708-26.84c17.429,0,31.372,7.669,31.372,23.703c0,18.824-19.52,29.629-31.023,39.389
+				c-10.108,8.714-23.354,23.006-23.354,52.983c0,18.125,4.879,23.354,19.171,23.354c17.08,0,20.565-7.668,20.565-14.291
+				c0-18.126,0.35-28.583,19.521-43.571c9.411-7.32,39.04-31.023,39.04-63.789S297.307,140.002,252.69,140.002z" />
+                                    <path d="M256,0C114.516,0,0,114.497,0,256v236c0,11.046,8.954,20,20,20h236c141.483,0,256-114.497,256-256
+				C512,114.516,397.503,0,256,0z M256,472H40V256c0-119.377,96.607-216,216-216c119.377,0,216,96.607,216,216
+				C472,375.377,375.393,472,256,472z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="whatsapp" enable-background="new 0 0 24 24"
+                        height="512px" viewbox="0 0 24 24" width="512px">
+                        <g>
+                            <path
+                                d="m17.507 14.307-.009.075c-2.199-1.096-2.429-1.242-2.713-.816-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.293-.506.32-.578.878-1.634.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.576-.05-.997-.042-1.368.344-1.614 1.774-1.207 3.604.174 5.55 2.714 3.552 4.16 4.206 6.804 5.114.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345z"
+                                data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <path
+                                d="m20.52 3.449c-7.689-7.433-20.414-2.042-20.419 8.444 0 2.096.549 4.14 1.595 5.945l-1.696 6.162 6.335-1.652c7.905 4.27 17.661-1.4 17.665-10.449 0-3.176-1.24-6.165-3.495-8.411zm1.482 8.417c-.006 7.633-8.385 12.4-15.012 8.504l-.36-.214-3.75.975 1.005-3.645-.239-.375c-4.124-6.565.614-15.145 8.426-15.145 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99z"
+                                data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                        </g>
+                    </svg>
+
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg height="511pt" viewbox="0 0 511 511.9" width="511pt" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                        <path
+                            d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                        <path
+                            d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- First Screen -->
+    <section class="first-screen anchor" id="anchor1">
+        <div class="first-screen-content-wraper">
+            <h1>
+                Ваш частный
+                риэлтор в
+                Алматы
+            </h1>
+            <p>
+                качественная помошь
+                в поиске квартиры
+            </p>
+            <a href=""><button class="btn">
+                    связаться →
+                </button>
+            </a>
+        </div>
+        <div class="first-screen-images-wraper img-container">
+            <img class="sroped-img" src="dist/images/renders2.jpg" alt="MDN logo">
+        </div>
+        <div class="first-screen-bg"></div>
+    </section>
+    <!-- First Screen End -->
+
+    <!-- Apartment -->
+    <section class="apartment anchor" id="anchor2">
+        <div class="apartment">
+            <div class="apartment--1bl">
+                <div class="apartment--1bl-main-img img-container">
+                    <img class="sroped-img" src="dist/images/renders2.jpg" alt="MDN logo">
+                </div>
+                <div class="apartment--1bl-small-imgs">
+                    <div class="img-container">
+                        <img class="sroped-img" src="dist/images/renders2.jpg" alt="MDN logo">
+                    </div>
+                    <div class="img-container">
+                        <img class="sroped-img" src="dist/images/renders2.jpg" alt="MDN logo">
+                    </div>
+                    <div class="img-container">
+                        <img class="sroped-img" src="dist/images/renders2.jpg" alt="MDN logo">
+                    </div>
+                    <div class="img-container">
+                        <img class="sroped-img" src="dist/images/renders2.jpg" alt="MDN logo">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="apartment--2bl">
+                <div class="apartment--2bl-img img-container">
+                    <img class="sroped-img" src="dist/images/renders2.jpg" alt="MDN logo">
+                </div>
+                <div class="apartment--2bl-dis img-container">
+                    <a href="#" class="swipe swipe-left">
+                        <svg width="51" height="94" viewbox="0 0 51 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M49 92L4 47C4 47 31.4264 19.5736 49 2" stroke="#C4C4C4" stroke-width="5" />
+                        </svg>
+                    </a>
+                    <div class="apartment-wraper">
+                        <h3>Абая 128</h3>
+                        <p class="apartment-sub">(угол ул.Розыбакиева)</p>
+                        <ul class="apartment-dis">
+                            <li>
+                                4 комнаты (2 спальни, 1 зал, 1 гостинная)
+                            </li>
+                            <li>
+                                2 ванные (раздельный санузел)
+                            </li>
+                            <li>
+                                6 этаж (понарамный вид на горы)
+                            </li>
+                            <li>
+                                магазины в шаговой доступности
+                            </li>
+                        </ul>
+                        <a href="#">
+                            <button class="booking-btn">
+                                Забронировать
+                            </button>
+                        </a>
+                    </div>
+                    <a href="#" class="swipe swipe-right">
+                        <svg width="51" height="94" viewbox="0 0 51 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 92L47 47C47 47 19.5736 19.5736 2 2" stroke="#C4C4C4" stroke-width="5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Apartment -->
+
+    <section class="cost anchor" id="anchor3">
+        <h1>Цены на услуги</h1>
+
+        <div class="cost-item">
+            <h3>
+                Поиск квартиры для
+                долгосрочной аренды
+            </h3>
+            <p>
+                Стоимость 30% от месячной
+                стоимости аренды
+            </p>
+        </div>
+        <div class="cost-item">
+            <h3>
+                Сдача комерческой
+                недвижимости
+            </h3>
+            <p>
+                Стоимость 30% от месячной
+                стоимости аренды
+            </p>
+        </div>
+        <div class="cost-item">
+            <h3>
+                Продажа/Покупка
+                квартиры
+            </h3>
+            <p>
+                Стоимость 2% от
+                стоимости квартиры
+            </p>
+        </div>
+        <h3>
+            Остались вопросы?
+        </h3>
+        <a href="#">
+            <button class="booking-btn">
+                Связаться
+            </button>
+        </a>
+
+    </section>
+
+    <section class="blog anchor" id="anchor4">
+        <h2>Блог</h2>
+        <p>всё о недвижимости в Алматы</p>
+
+        <div class="news-item">
+            <div class="news-item--img img-container">
+                <img class="sroped-img" src="dist/images/renders2.jpg" alt="MDN logo">
+            </div>
+            <div class="news-item--content">
+                <h3>
+                    Как выбрать квартиру
+                </h3>
+                <p class="news-item--hashtags">#some #almaty #arenda</p>
+                <p class="news-item--text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod sed maxime ea repudiandae,
+                    dolor totam sit quia itaque consequatur dignissimos blanditiis accusamus, eum autem vitae iste
+                    voluptatum sunt labore.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form anchor" id="anchor5">
+        <h2>Оставляй заявку</h2>
+        <p>Я отвечу в течении 10 минут</p>
+
+        <form action="php/submit.php" method="post" id="ajax_form">
+
+            <h1>Заявка</h1>
+
+            <div class="group">
+                <input type="text" required="required" name="name" /><span class="highlight"></span><span
+                    class="bar"></span>
+                <label class=".labelForText">Ваше имя</label>
+            </div>
+
+            <div class="group">
+                <input type="tel" required="required" name="phone" /><span class="highlight"></span><span
+                    class="bar"></span>
+                <label class=".labelForText">Номер телефона</label>
+            </div>
+
+            <div class="btn-box">
+                <button id="btn" class="btn btn-submit" type="submit" name="submit">Записаться</button>
+            </div>
+        </form>
+
+        <div class="contacts">
+            <h3>Мои контакты</h3>
+            <p>+7 707 421 84 38</p>
+            <p>info@arenda-al.kz</p>
+            <p>@prchv</p>
+        </div>
+
+    </section>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="dist/scripts/all.js"></script>
 </body>
+
 </html>
