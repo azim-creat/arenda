@@ -1,9 +1,5 @@
-*,::before, ::after{
-    box-sizing: border-box;
-}
+
 form {
-padding: 50px 0;
-width: 80vw;
   max-width: 400px;
   margin: 0px auto;
 
@@ -118,9 +114,7 @@ input[type=tel]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-// Removing arrow of type Number input ///End///
 
-// BUTTONS // ============================== //
 .btn {
   width: 100%;
   padding: 10px 20px;
@@ -162,19 +156,11 @@ input[type=tel]::-webkit-outer-spin-button {
   margin: 20px 0;
 }
 
-/* Hover */
-.form_radio_btn label:hover {
-  border: 1px solid #fff;
-	color: #fff;
-}
- 
 
 
 
 
-
-
-.contacts{
+.form-content--contacts{
     h3{
         font-size: 200%;
     }
@@ -184,11 +170,6 @@ input[type=tel]::-webkit-outer-spin-button {
     }
     text-align: center;
 }
-
-
-
-
-
 
 .btn{
   border-radius: 2px;
@@ -227,3 +208,31 @@ input[type=tel]::-webkit-outer-spin-button {
     left: -10%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////
+@media (orientation: landscape) and (min-width: 700px){
+  .form-content{
+    display: flex;
+    justify-content: space-between;
+  }
+  .form-content--form{
+    width: 48%  !important;
+  }
+  .form-content--contacts{
+    text-align: left;
+    width: 48%;
+  }
+}
+

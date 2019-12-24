@@ -1,46 +1,18 @@
 $(document).ready(
   () => {
-    var anchors = [];
-    var currentAnchor = -1;
-    var isAnimating = false;
+    $('#fullpage').fullpage();
 
-    $(function () {
-
-      function updateAnchors() {
-        anchors = [];
-        $('.anchor').each(function (i, element) {
-          anchors.push($(element).offset().top);
-        });
+    var $win = $(window);
+    var $marker = $('#apartment');
+    
+    //отслеживаем событие прокрутки страницы
+    $win.scroll(function() {
+      //Складываем значение прокрутки страницы и высоту окна, этим мы получаем положение страницы относительно нижней границы окна, потом проверяем, если это значение больше, чем отступ нужного элемента от верха страницы, то значит элемент уже появился внизу окна, соответственно виден
+      if($win.scrollTop() + $win.height() >= $marker.offset().top) {
+        $('#apartment-nav').addClass( "active" ); //выполняем действия если элемент виден
+      }else{
+        $('#apartment-nav').removeClass( "active" ); //выполняем действия если не элемент виден
       }
-
-      $('body').on('mousewheel', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (isAnimating) {
-          return false;
-        }
-        isAnimating = true;
-        // Increase or reset current anchor
-        if (e.originalEvent.wheelDelta >= 0) {
-          currentAnchor--;
-        } else {
-          currentAnchor++;
-        }
-        if (currentAnchor > (anchors.length - 1)
-          || currentAnchor < 0) {
-          // currentAnchor = 0;
-          currentAnchor = currentAnchor;
-        }
-        isAnimating = true;
-        $('html, body').animate({
-          scrollTop: parseInt(anchors[currentAnchor])
-        }, 500, 'swing', function () {
-          isAnimating = false;
-        });
-      });
-
-      updateAnchors();
-
     });
   }
 )

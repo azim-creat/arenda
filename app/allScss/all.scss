@@ -2,6 +2,10 @@ $dark-gray: #1c1c1c;
 $gray: #3d3d3d;
 $gold: #bf935f;
 
+*,::before, ::after{
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +18,10 @@ body {
   overflow-X: hidden;
 }
 
+#fullpage {
+  height: 100vh;
+  overflow: hidden;
+}
 
 h1,
 h2,
@@ -36,11 +44,17 @@ h3 {
 }
 
 section {
-  border: 1px solid red;
-  width: 90vw;
+  width: 100vw;
   height: 90vh;
   padding: 5vh 5vw;
   overflow: hidden;
+}
+
+.title-wrap{
+  margin-bottom: 1rem;
+  h2{
+    font-size: 2rem;
+  }
 }
 
 li svg {
@@ -88,10 +102,43 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+.hasBG{
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hasBG:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.08;
+  background-image: url(../images/flat2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
 
 //Nav menu in desctop
 
 @media (orientation: landscape) and (min-width: 700px) {
+  section {
+    width: 90vw;
+    height: 90vh;
+    padding: 5vh 5vw;
+    overflow: hidden;
+  }
+  
   nav {
     width: 45px;
     height: 100vh;
@@ -122,79 +169,6 @@ button {
   }
 }
 
-
-.first-screen {
-  position: relative;
-  padding: 0;
-  display: grid;
-  grid-template-rows: 60vh 40vh;
-  grid-template-areas:
-    "first-screen-content"
-    "first-screen-images";
-}
-.first-screen-content-wraper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-    width: 90vw;
-    padding: 5vw;
-    grid-area: first-screen-content;
-    text-align: center;
-    h1{
-        flex-basis: 30%;
-    }
-    p{
-        flex-basis: 30%;
-        font-size: 25px;
-    }
-    button{
-        justify-self: center;
-        width: 60vw;
-        height: 7vh;
-    }
-}
-.first-screen-images-wraper {
-  clip-path: polygon(58% 0, 100% 0%, 100% 100%, 41% 100%);
-  grid-area: first-screen-images;
-  z-index: -1;
-  bottom: 0;
-  display: grid;
-  grid-template-columns: 50vw 50vw;
-  grid-template-areas: "img-left img-right";
-}
-
-.first-screen-bg{
-    background: url(../images/flat.jpg) center ;
-    background-size: cover;
-    height: 90vh;
-    width: 100vw;
-    position: absolute;
-    z-index: -2;
-    opacity: 0.09;
-}
-
-.apartment-sub {
-  font-size: 20px;
-}
-
-.apartment-dis {
-  padding-top: 20px;
-  padding-left: 30px;
-}
-
-.booking-btn {
-  margin-top: 20px;
-  padding: 15px 20px;
-}
-
-.swipe {
-  padding: 10px 20px;
-  svg {
-    height: 60px;
-  }
-}
-
 .img-container {
   position: relative;
   overflow: hidden;
@@ -212,59 +186,247 @@ button {
 }
 
 
+
+@media (orientation: landscape) and (min-width: 700px){
+  .title-wrap{
+    margin-bottom: 1rem;
+    h2{
+      font-size: 2rem;
+    }
+  }
+  
+}
+
+.first-screen {
+  position: relative;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 60vh 40vh;
+  grid-template-areas:
+    "first-screen-content"
+    "first-screen-images";
+}
+
+
+
+
+.first-screen-content-wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  width: 100vw;
+  padding: 5vw;
+  grid-area: first-screen-content;
+  text-align: center;
+  h1 {
+    flex-basis: 30%;
+  }
+  p {
+    flex-basis: 20%;
+    font-size: 25px;
+  }
+  button {
+    justify-self: center;
+    width: 70vw;
+    height: 7vh;
+  }
+}
+.first-screen-images-wraper {
+  grid-area: first-screen-images;
+  z-index: -1;
+  
+}
+
+@media (orientation: landscape) and (min-width: 700px) {
+  .first-screen {
+    grid-template-rows: 1fr;
+    grid-template-columns: 48vw auto;
+    grid-template-areas: "first-screen-content first-screen-images";
+  }
+
+  .first-screen-content-wraper {
+    width: 100%;
+    padding: 5vw;
+    grid-area: first-screen-content;
+    text-align: left;
+    h1 {
+      font-size: 3rem;
+      flex-basis: 30%;
+    }
+    p {
+      flex-basis: 30%;
+      font-size: 25px;
+    }
+    button {
+      justify-self: center;
+      width: 20vw;
+      font-size: 1rem;
+      height: 5vw;
+    }
+  }
+  .first-screen-images-wraper {
+    height: 100vh;
+    clip-path: polygon(20% 10%, 90% 10%, 90% 90%, 0 90%);
+    grid-area: first-screen-images;
+    z-index: -1;
+    bottom: 0;
+    grid-template-columns: 1fr;
+  }
+}
+
+.apartment-sub {
+  font-size: 1rem;
+}
+
+.apartment-dis {
+  font-size: 0.8rem;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.booking-btn {
+  margin-top: 20px;
+  padding: 15px 20px;
+}
+
+.apartment-cont-wraper{
+  width: 70%;
+  h3, p{
+    text-align: center;
+  }
+  button{
+    font-size: 1rem;
+  }
+}
+
+.swipe {
+  width: 12%;
+  padding: 5px 10px;
+  svg {
+    width: 100%;
+    // height: 40px;
+  }
+}
+
 //@extend
 
-.apartment{
+.apartment {
   background-color: $gray;
-  // width: 90vw;
-  height: 100vh;
+  height: 70vh;
   display: grid;
-  grid-template-columns: 6fr 4fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "1bl 2bl";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: "1bl" "a2bl";
 
-  &--1bl{
+  &--1bl {
+    overflow: visible;
     grid-area: 1bl;
-    background-color: pink;
-  
-    display: grid;
-    grid-template-rows: 8fr 2fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: "mainImg" "smallImgs";
-
-    &-main-img{
-      background-color: rgb(145, 81, 81);
+    display: block;
+    &-main-img {
+      width: 100%;
+      height: 100%;
+      display: block;
       grid-area: mainImg;
     }
-    &-small-imgs{
-      grid-area: smallImgs;
-      display: flex;
-
+    &-small-imgs {
+      display: none;
     }
   }
 
-  &--2bl{
-    grid-area: 2bl;
-    background-color: blue;
-  
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 20vh minmax(150px, 60vh);
-    grid-template-areas: "2img" "2dis";
+  &--2bl {
+    background-color: $gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
-    &-img{
-      grid-area: 2img;
-      background-color: #fff;
+
+
+
+@media (orientation: landscape) and (min-width: 700px) {
+  .apartment-sub {
+    font-size: 1rem;
+  }
+  
+  .apartment-dis {
+    font-size: 0.8rem;
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+  
+  .booking-btn {
+    margin-top: 20px;
+    padding: 15px 20px;
+  }
+  
+  .apartment-cont-wraper{
+    width: 70%;
+    h3, p{
+      text-align: center;
     }
-    &-dis{
-      grid-area: 2dis;
-      overflow: hidden !important;
-      background-color: $gray; 
+    button{
+      font-size: 1rem;
+    }
+  }
+  
+  .swipe {
+    width: 12%;
+    padding: 5px 10px;
+    svg {
+      width: 100%;
+      // height: 40px;
+    }
+  }
+  
+  //@extend
+  
+  .apartment {
+    background-color: $gray;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "1bl a2bl";
+    
+    &--1bl {
+      grid-area: 1bl;
+      display: grid;
+      grid-template-rows: 8fr 2fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "mainImg" "smallImgs";
+  
+      &-main-img {
+        grid-area: mainImg;
+      }
+      &-small-imgs {
+        grid-area: smallImgs;
+        display: flex;
+      }
+    }
+  
+    &--2bl {
+      grid-area: a2bl;
+      background-color: $gray;
+      background-color: $gray;
       display: flex;
+      justify-content: center;
       align-items: center;
     }
   }
+  
+  
+  .apartment-img:hover{
+    max-width:110%;
+    transition: 0.2s ;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.76), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
 }
+
+
+
 
 
 
@@ -274,29 +436,68 @@ button {
         font-size: 30px;
     }
 }
-.news-item{
-    background-color: $gray;
-    
-    &--img{
-        height: 30vh;
-        display: flex;
-        flex-direction: column;
+.cost-call-to-action{
+    margin-top: 3rem;
+    text-align: center;
+    h3{
+        font-size: 2rem;
     }
+}
+@media (orientation: landscape) and (min-width: 700px) {
+    .cost-item{
+        padding-top: 20px;
+        h3{
+            font-size: 1.5rem;
+        }
+    }
+  }
+  
+.news-item {
+  background-color: $gray;
+  display: flex;
+  flex-direction: column;
+  &--img {
+    height: 30vh;
+  }
+  &--content {
+    padding: 3vw;
+  }
+  &--text {
+    text-align: justify;
+  }
+}
 
-    &--content{
-        padding: 3vw;
-    }
-    &--text{
-        text-align: justify;
-    }
-    
+@media (orientation: landscape) and (min-width: 700px) {
+  .news-wrap {
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+  }
+  .news-item{
+      height: 100%;
+      width: 48%;
+  }
+
+  
+  .news-item--content{
+      height: 60%;
+  }
+  .news-title{
+      margin-bottom: 4%;
+  }
+  .news-item--text{
+      height: 4rem;
+      overflow: hidden;
+      font-size:13px;
+  }
+  .news-item--hashtags{
+    font-size:13px;
+
+  }
 }
-*,::before, ::after{
-    box-sizing: border-box;
-}
+
+
 form {
-padding: 50px 0;
-width: 80vw;
   max-width: 400px;
   margin: 0px auto;
 
@@ -411,9 +612,7 @@ input[type=tel]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-// Removing arrow of type Number input ///End///
 
-// BUTTONS // ============================== //
 .btn {
   width: 100%;
   padding: 10px 20px;
@@ -455,19 +654,11 @@ input[type=tel]::-webkit-outer-spin-button {
   margin: 20px 0;
 }
 
-/* Hover */
-.form_radio_btn label:hover {
-  border: 1px solid #fff;
-	color: #fff;
-}
- 
 
 
 
 
-
-
-.contacts{
+.form-content--contacts{
     h3{
         font-size: 200%;
     }
@@ -477,11 +668,6 @@ input[type=tel]::-webkit-outer-spin-button {
     }
     text-align: center;
 }
-
-
-
-
-
 
 .btn{
   border-radius: 2px;
@@ -520,3 +706,31 @@ input[type=tel]::-webkit-outer-spin-button {
     left: -10%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////
+@media (orientation: landscape) and (min-width: 700px){
+  .form-content{
+    display: flex;
+    justify-content: space-between;
+  }
+  .form-content--form{
+    width: 48%  !important;
+  }
+  .form-content--contacts{
+    text-align: left;
+    width: 48%;
+  }
+}
+

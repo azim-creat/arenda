@@ -1,9 +1,9 @@
-
 .apartment-sub {
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .apartment-dis {
+  font-size: 0.8rem;
   padding-top: 20px;
   padding-left: 30px;
 }
@@ -13,82 +13,142 @@
   padding: 15px 20px;
 }
 
-.swipe {
-  padding: 10px 20px;
-  svg {
-    height: 60px;
+.apartment-cont-wraper{
+  width: 70%;
+  h3, p{
+    text-align: center;
+  }
+  button{
+    font-size: 1rem;
   }
 }
 
-.img-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+.swipe {
+  width: 12%;
+  padding: 5px 10px;
+  svg {
+    width: 100%;
+    // height: 40px;
+  }
 }
-
-.sroped-img {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  right: -9999px;
-  bottom: -9999px;
-  margin: auto;
-  max-width: 100%;
-}
-
 
 //@extend
 
-.apartment{
+.apartment {
   background-color: $gray;
-  // width: 90vw;
-  height: 100vh;
+  height: 70vh;
   display: grid;
-  grid-template-columns: 6fr 4fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "1bl 2bl";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: "1bl" "a2bl";
 
-  &--1bl{
+  &--1bl {
+    overflow: visible;
     grid-area: 1bl;
-    background-color: pink;
-  
-    display: grid;
-    grid-template-rows: 8fr 2fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: "mainImg" "smallImgs";
-
-    &-main-img{
-      background-color: rgb(145, 81, 81);
+    display: block;
+    &-main-img {
+      width: 100%;
+      height: 100%;
+      display: block;
       grid-area: mainImg;
     }
-    &-small-imgs{
-      grid-area: smallImgs;
-      display: flex;
-
+    &-small-imgs {
+      display: none;
     }
   }
 
-  &--2bl{
-    grid-area: 2bl;
-    background-color: blue;
-  
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 20vh minmax(150px, 60vh);
-    grid-template-areas: "2img" "2dis";
+  &--2bl {
+    background-color: $gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
-    &-img{
-      grid-area: 2img;
-      background-color: #fff;
+
+
+
+@media (orientation: landscape) and (min-width: 700px) {
+  .apartment-sub {
+    font-size: 1rem;
+  }
+  
+  .apartment-dis {
+    font-size: 0.8rem;
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+  
+  .booking-btn {
+    margin-top: 20px;
+    padding: 15px 20px;
+  }
+  
+  .apartment-cont-wraper{
+    width: 70%;
+    h3, p{
+      text-align: center;
     }
-    &-dis{
-      grid-area: 2dis;
-      overflow: hidden !important;
-      background-color: $gray; 
+    button{
+      font-size: 1rem;
+    }
+  }
+  
+  .swipe {
+    width: 12%;
+    padding: 5px 10px;
+    svg {
+      width: 100%;
+      // height: 40px;
+    }
+  }
+  
+  //@extend
+  
+  .apartment {
+    background-color: $gray;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "1bl a2bl";
+    
+    &--1bl {
+      grid-area: 1bl;
+      display: grid;
+      grid-template-rows: 8fr 2fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "mainImg" "smallImgs";
+  
+      &-main-img {
+        grid-area: mainImg;
+      }
+      &-small-imgs {
+        grid-area: smallImgs;
+        display: flex;
+      }
+    }
+  
+    &--2bl {
+      grid-area: a2bl;
+      background-color: $gray;
+      background-color: $gray;
       display: flex;
+      justify-content: center;
       align-items: center;
     }
   }
+  
+  
+  .apartment-img:hover{
+    max-width:110%;
+    transition: 0.2s ;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.76), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
 }
+
+
+
 
 

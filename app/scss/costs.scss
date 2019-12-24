@@ -4,3 +4,19 @@
         font-size: 30px;
     }
 }
+.cost-call-to-action{
+    margin-top: 3rem;
+    text-align: center;
+    h3{
+        font-size: 2rem;
+    }
+}
+@media (orientation: landscape) and (min-width: 700px) {
+    .cost-item{
+        padding-top: 20px;
+        h3{
+            font-size: 1.5rem;
+        }
+    }
+  }
+  

@@ -7,44 +7,71 @@
     "first-screen-content"
     "first-screen-images";
 }
+
+
+
+
 .first-screen-content-wraper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-    width: 90vw;
-    padding: 5vw;
-    grid-area: first-screen-content;
-    text-align: center;
-    h1{
-        flex-basis: 30%;
-    }
-    p{
-        flex-basis: 30%;
-        font-size: 25px;
-    }
-    button{
-        justify-self: center;
-        width: 60vw;
-        height: 7vh;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  width: 100vw;
+  padding: 5vw;
+  grid-area: first-screen-content;
+  text-align: center;
+  h1 {
+    flex-basis: 30%;
+  }
+  p {
+    flex-basis: 20%;
+    font-size: 25px;
+  }
+  button {
+    justify-self: center;
+    width: 70vw;
+    height: 7vh;
+  }
 }
 .first-screen-images-wraper {
-  clip-path: polygon(58% 0, 100% 0%, 100% 100%, 41% 100%);
   grid-area: first-screen-images;
   z-index: -1;
-  bottom: 0;
-  display: grid;
-  grid-template-columns: 50vw 50vw;
-  grid-template-areas: "img-left img-right";
+  
 }
 
-.first-screen-bg{
-    background: url(../images/flat.jpg) center ;
-    background-size: cover;
-    height: 90vh;
-    width: 100vw;
-    position: absolute;
-    z-index: -2;
-    opacity: 0.09;
+@media (orientation: landscape) and (min-width: 700px) {
+  .first-screen {
+    grid-template-rows: 1fr;
+    grid-template-columns: 48vw auto;
+    grid-template-areas: "first-screen-content first-screen-images";
+  }
+
+  .first-screen-content-wraper {
+    width: 100%;
+    padding: 5vw;
+    grid-area: first-screen-content;
+    text-align: left;
+    h1 {
+      font-size: 3rem;
+      flex-basis: 30%;
+    }
+    p {
+      flex-basis: 30%;
+      font-size: 25px;
+    }
+    button {
+      justify-self: center;
+      width: 20vw;
+      font-size: 1rem;
+      height: 5vw;
+    }
+  }
+  .first-screen-images-wraper {
+    height: 100vh;
+    clip-path: polygon(20% 10%, 90% 10%, 90% 90%, 0 90%);
+    grid-area: first-screen-images;
+    z-index: -1;
+    bottom: 0;
+    grid-template-columns: 1fr;
+  }
 }
